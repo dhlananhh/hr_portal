@@ -2,7 +2,7 @@
     "name": "HR & Recruitment Portal",
     "version": "18.0.1.1.0",
     "summary": "Enhances HR functionalities and adds a recruitment portal.",
-    "author": "[Your Name]",
+    "author": "Lan Anh",
     "category": "Human Resources",
     "license": "LGPL-3",
     "depends": [

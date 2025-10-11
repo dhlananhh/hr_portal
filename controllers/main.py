@@ -1,33 +1,20 @@
-# Cập nhật file: controllers/main.py
 from odoo import http
 from odoo.http import request
 
 
 class HrPortalController(http.Controller):
 
-    # === LUỒNG TUYỂN DỤNG ===
-
     @http.route("/jobs", type="http", auth="public", website=True)
     def jobs_list(self, **kwargs):
-        """Hiển thị danh sách các vị trí đang tuyển dụng"""
         jobs = request.env["hr.job"].sudo().search([("website_published", "=", True)])
         return request.render("om_hr_portal.jobs_page", {"jobs": jobs})
-
-    # CẬP NHẬT: Trang chi tiết công việc, sử dụng trang mặc định của Odoo
-    # Odoo đã có sẵn route /jobs/detail/<job>, chúng ta chỉ cần đảm bảo link tới nó là đúng
-    # Nếu muốn tùy chỉnh trang này, bạn có thể tạo template riêng và render ở đây.
 
     @http.route(
         "/jobs/apply/submit", type="http", auth="public", website=True, methods=["POST"]
     )
     def apply_for_job_submit(self, **kwargs):
-        """
-        Nhận dữ liệu từ form ứng tuyển, tạo hồ sơ ứng viên (hr.applicant)
-        """
-        # Lấy job_id từ form, đây là trường input hidden
         job_id = int(kwargs.get("job_id", 0))
 
-        # Tạo bản ghi hr.applicant
         applicant = (
             request.env["hr.applicant"]
             .sudo()
@@ -45,7 +32,6 @@ class HrPortalController(http.Controller):
             )
         )
 
-        # Xử lý file CV upload
         if "ufile" in request.params:
             attachment = (
                 request.env["ir.attachment"]
@@ -61,25 +47,15 @@ class HrPortalController(http.Controller):
                     }
                 )
             )
-            # Gán file CV vừa upload vào trường attachment_ids của hồ sơ ứng viên
             applicant.attachment_ids = [(4, attachment.id)]
 
-        # Chuyển hướng đến trang cảm ơn
         return request.render("om_hr_portal.apply_form_success")
-
-    # === CỔNG THÔNG TIN NHÂN VIÊN ===
 
     @http.route("/my/profile", type="http", auth="user", website=True)
     def my_profile(self, **kwargs):
-        """
-        Hiển thị trang thông tin cá nhân của nhân viên đang đăng nhập.
-        """
-        # Lấy bản ghi nhân viên tương ứng với người dùng đang đăng nhập
         employee = request.env.user.employee_id
 
         if not employee:
-            # Nếu người dùng chưa được liên kết với hồ sơ nhân viên nào
-            # thì thông báo cho họ
             return request.render("om_hr_portal.portal_not_an_employee")
 
         values = {"employee": employee}

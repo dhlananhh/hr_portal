@@ -1,6 +1,4 @@
-<!-- Cập nhật file: views/templates.xml -->
 <odoo>
-  <!-- Trang danh sách việc làm (không đổi) -->
   <template id="jobs_page" name="Open Positions">
     <t t-call="website.layout">
       <div id="wrap">
@@ -13,7 +11,6 @@
               </div>
             </t>
             <t t-foreach="jobs" t-as="job">
-              <!-- Link tới trang chi tiết mặc định của Odoo -->
               <a t-attf-href="/jobs/detail/{{job.id}}"
                 class="list-group-item list-group-item-action mb-3 border rounded">
                 <div class="d-flex w-100 justify-content-between">
@@ -32,7 +29,6 @@
     </t>
   </template>
 
-  <!-- CẬP NHẬT: Thêm form ứng tuyển vào trang chi tiết công việc mặc định của Odoo -->
   <template id="job_detail_apply_form" inherit_id="hr_recruitment.detail">
     <xpath expr="//div[@id='o_scrollon_form_inner']" position="inside">
       <div class="container my-5">
@@ -40,7 +36,6 @@
         <h3 class="mt-4">Apply for this position</h3>
         <form action="/jobs/apply/submit" method="post" enctype="multipart/form-data">
           <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
-          <!-- Trường ẩn để biết ứng viên apply cho job nào -->
           <input type="hidden" name="job_id" t-att-value="job.id" />
 
           <div class="row">
@@ -69,7 +64,6 @@
     </xpath>
   </template>
 
-  <!-- Trang cảm ơn sau khi ứng tuyển thành công -->
   <template id="apply_form_success" name="Application Submitted">
     <t t-call="website.layout">
       <div id="wrap">
