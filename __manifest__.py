@@ -1,0 +1,25 @@
+{
+    "name": "HR & Recruitment Portal",
+    "version": "18.0.1.1.0",
+    "summary": "Enhances HR functionalities and adds a recruitment portal.",
+    "author": "[Your Name]",
+    "category": "Human Resources",
+    "license": "LGPL-3",
+    "depends": [
+        "hr_recruitment",
+        "website",
+        "hr_holidays",
+        "portal",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/ir_rule.xml",
+        "views/hr_employee_change_request_view.xml",
+        "views/hr_employee_view.xml",
+        "views/portal_templates.xml",
+        "views/templates.xml",
+    ],
+    "installable": True,
+    "application": True,
+    "auto_install": False,
+}
