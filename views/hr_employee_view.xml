@@ -1,16 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <data>
-    <record id="view_employee_form_inherited"
-      model="ir.ui.view">
+    <record id="view_employee_form_inherited" model="ir.ui.view">
       <field name="name">hr.employee.form.inherited</field>
       <field name="model">hr.employee</field>
-      <field name="inherit_id"
-        ref="hr.view_employee_form" />
-      <field name="arch"
-        type="xml">
-        <xpath expr="//field[@name='work_email']"
-          position="after">
+      <field name="inherit_id" ref="hr.view_employee_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='work_email']" position="after">
           <field name="personal_email" />
           <field name="citizen_id" />
           <field name="bank_account_number" />

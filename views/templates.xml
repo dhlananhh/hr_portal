@@ -1,79 +1,31 @@
 <odoo>
-  <template id="jobs_page" name="Open Positions">
-    <t t-call="website.layout">
-      <div id="wrap">
-        <div class="container py-5">
-          <h1 class="mb-4">Open Positions</h1>
-          <div class="list-group">
-            <t t-if="not jobs">
-              <div class="alert alert-info" role="alert">
-                Currently, there are no open positions. Please check back later!
-              </div>
-            </t>
-            <t t-foreach="jobs" t-as="job">
-              <a t-attf-href="/jobs/detail/{{job.id}}"
-                class="list-group-item list-group-item-action mb-3 border rounded">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1" t-field="job.name" />
-                  <span class="badge bg-secondary rounded-pill" t-esc="job.no_of_new_application" />
+  <data>
+    <template id="jobs_page" name="Open Positions">
+      <t t-call="website.layout">
+        <div id="wrap">
+          <div class="container py-5">
+            <h1 class="mb-4">Open Positions</h1>
+            <div class="list-group">
+              <t t-if="not jobs">
+                <div class="alert alert-info">
+                  Currently, there are no open positions. Please check back later!
                 </div>
-                <p class="mb-1 text-muted" t-if="job.address_id">
-                  <i class="fa fa-map-marker" />
-                  <span t-field="job.address_id.city" />
-                </p>
-              </a>
-            </t>
-          </div>
-        </div>
-      </div>
-    </t>
-  </template>
-
-  <template id="job_detail_apply_form" inherit_id="hr_recruitment.detail">
-    <xpath expr="//div[@id='o_scrollon_form_inner']" position="inside">
-      <div class="container my-5">
-        <hr />
-        <h3 class="mt-4">Apply for this position</h3>
-        <form action="/jobs/apply/submit" method="post" enctype="multipart/form-data">
-          <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
-          <input type="hidden" name="job_id" t-att-value="job.id" />
-
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label for="partner_name" class="form-label">Your Name</label>
-                <input type="text" class="form-control" name="partner_name" required="1" />
-              </div>
-              <div class="mb-3">
-                <label for="email_from" class="form-label">Your Email</label>
-                <input type="email" class="form-control" name="email_from" required="1" />
-              </div>
-              <div class="mb-3">
-                <label for="partner_phone" class="form-label">Your Phone</label>
-                <input type="tel" class="form-control" name="partner_phone" />
-              </div>
-              <div class="mb-3">
-                <label for="ufile" class="form-label">Your CV (PDF, Word)</label>
-                <input type="file" class="form-control" name="ufile" required="1" />
-              </div>
+              </t>
+              <t t-foreach="jobs" t-as="job">
+                <a t-attf-href="/jobs/detail/{{job.id}}"
+                  class="list-group-item list-group-item-action flex-column align-items-start mb-3 border rounded">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1" t-field="job.name" />
+                    <small><t t-esc="job.no_of_new_application" /> New Applications</small>
+                  </div>
+                  <p class="mb-1"> Location: <span t-field="job.address_id.city" />
+                  </p>
+                </a>
+              </t>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit Application</button>
-        </form>
-      </div>
-    </xpath>
-  </template>
-
-  <template id="apply_form_success" name="Application Submitted">
-    <t t-call="website.layout">
-      <div id="wrap">
-        <div class="container py-5 text-center">
-          <h1 class="text-success">Thank You!</h1>
-          <p class="lead">Your application has been successfully submitted.</p>
-          <p>Our recruitment team will review your profile and get back to you shortly.</p>
-          <a href="/jobs" class="btn btn-primary mt-3">Back to Jobs List</a>
         </div>
-      </div>
-    </t>
-  </template>
+      </t>
+    </template>
+  </data>
 </odoo>

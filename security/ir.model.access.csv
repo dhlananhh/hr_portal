@@ -1,4 +1,2 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hr_employee_portal,hr.employee portal users,hr.model_hr_employee,base.group_user,1,0,0,0
-access_hr_employee_change_request_hr,hr.employee.change.request hr,om_hr_portal.model_hr_employee_change_request,hr.group_hr_manager,1,1,1,1
-access_hr_employee_change_request_portal,hr.employee.change.request portal,om_hr_portal.model_hr_employee_change_request,base.group_portal,1,0,1,0
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_delete
+access_hr_employee_portal,access_hr_employee_portal,hr.model_hr_employee,base.group_user,1,1,1,1

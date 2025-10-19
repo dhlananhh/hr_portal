@@ -1,22 +1,22 @@
 {
     "name": "HR & Recruitment Portal",
-    "version": "18.0.1.1.0",
-    "summary": "Enhances HR functionalities and adds a recruitment portal.",
+    "version": "18.0.1.0.0",
+    "summary": "Manage recruitment processes and employee portal.",
+    "description": """
+        This module extends HR features to provide a full recruitment workflow
+        from the website and an internal portal for employees.
+    """,
     "author": "Lan Anh",
     "category": "Human Resources",
     "license": "LGPL-3",
     "depends": [
+        "hr",
         "hr_recruitment",
         "website",
-        "hr_holidays",
-        "portal",
     ],
     "data": [
         "security/ir.model.access.csv",
-        "security/ir_rule.xml",
-        "views/hr_employee_change_request_view.xml",
         "views/hr_employee_view.xml",
-        "views/portal_templates.xml",
         "views/templates.xml",
     ],
     "installable": True,
