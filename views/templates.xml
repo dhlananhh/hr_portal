@@ -1,31 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-    <template id="jobs_page" name="Open Positions">
-      <t t-call="website.layout">
-        <div id="wrap">
-          <div class="container py-5">
-            <h1 class="mb-4">Open Positions</h1>
-            <div class="list-group">
-              <t t-if="not jobs">
-                <div class="alert alert-info">
-                  Currently, there are no open positions. Please check back later!
-                </div>
-              </t>
-              <t t-foreach="jobs" t-as="job">
-                <a t-attf-href="/jobs/detail/{{job.id}}"
-                  class="list-group-item list-group-item-action flex-column align-items-start mb-3 border rounded">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1" t-field="job.name" />
-                    <small><t t-esc="job.no_of_new_application" /> New Applications</small>
-                  </div>
-                  <p class="mb-1"> Location: <span t-field="job.address_id.city" />
-                  </p>
-                </a>
-              </t>
-            </div>
+
+  <!-- Jobs Listing Page Template -->
+  <template id="job_list_template" name="Jobs">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="container py-5">
+          <h1>Open Positions</h1>
+          <div class="list-group mt-4">
+            <t t-if="not jobs">
+              <div class="alert alert-info">There are currently no open positions.</div>
+            </t>
+            <t t-foreach="jobs" t-as="job">
+              <a t-attf-href="/jobs/detail/{{ job.id }}"
+                class="list-group-item list-group-item-action">
+                <h5 class="mb-1">
+                  <t t-esc="job.name" />
+                </h5>
+                <p class="mb-1">
+                  <t t-esc="job.department_id.name or 'N/A'" /> - <t
+                    t-esc="job.address_id.city or 'Remote'" />
+                </p>
+              </a>
+            </t>
           </div>
         </div>
-      </t>
-    </template>
-  </data>
+      </div>
+    </t>
+  </template>
+
+  <!-- Job Detail Page Template -->
+  <template id="job_detail_template" name="Job Detail">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="container py-5">
+          <!-- Job Description -->
+          <h1 t-field="job.name" />
+          <div class="mt-4" id="job_description">
+            <t t-raw="job.description" />
+          </div>
+
+          <hr class="my-5" />
+
+          <!-- Application Form -->
+          <h2>Apply for this position</h2>
+          <form action="/jobs/apply" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+            <input type="hidden" name="job_id" t-att-value="job.id" />
+            <div class="mb-3">
+              <label for="applicant_name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" name="applicant_name" required="1" />
+            </div>
+            <div class="mb-3">
+              <label for="applicant_email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" name="applicant_email" required="1" />
+            </div>
+            <div class="mb-3">
+              <label for="applicant_phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" name="applicant_phone" />
+            </div>
+            <div class="mb-3">
+              <label for="cv_file" class="form-label">Upload your CV</label>
+              <input type="file" class="form-control" name="cv_file" required="1" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </t>
+  </template>
+
+  <!-- Thank You Page Template -->
+  <template id="job_thank_you_template" name="Thank You">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="container py-5 text-center">
+          <h1 class="display-4">Thank You!</h1>
+          <p class="lead">Your application has been submitted successfully.</p>
+          <a href="/jobs" class="btn btn-primary">Back to Job Listings</a>
+        </div>
+      </div>
+    </t>
+  </template>
 </odoo>
