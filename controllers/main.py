@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import base64
+
 from odoo import http
 from odoo.http import request
 
@@ -35,46 +37,44 @@ class JobPortal(http.Controller):
         """
         return request.render("om_hr_portal.job_detail_template", {"job": job})
 
-    @http.route(
-        "/jobs/apply", type="http", auth="public", website=True, methods=["POST"]
+
+@http.route("/jobs/apply", type="http", auth="public", website=True, methods=["POST"])
+def job_apply(self, **post):
+    """
+    Controller to handle the job application form submission.
+    """
+    # Create a new applicant record
+    applicant = (
+        request.env["hr.applicant"]
+        .sudo()
+        .create(
+            {
+                "partner_name": post.get("applicant_name"),
+                "email_from": post.get("applicant_email"),
+                "partner_phone": post.get("applicant_phone"),
+                "job_id": int(post.get("job_id")),
+            }
+        )
     )
-    def job_apply(self, **post):
-        """
-        Controller to handle the job application form submission.
-        """
-        # Create a new applicant record
-        applicant = (
-            request.env["hr.applicant"]
+
+    # Attach the CV if one was uploaded
+    if "cv_file" in request.params:
+        attachment_data = request.params.get("cv_file").read()
+        attachment = (
+            request.env["ir.attachment"]
             .sudo()
             .create(
                 {
-                    "name": f"{post.get('applicant_name')}'s Application",
-                    "partner_name": post.get("applicant_name"),
-                    "email_from": post.get("applicant_email"),
-                    "partner_phone": post.get("applicant_phone"),
-                    "job_id": int(post.get("job_id")),
+                    "name": request.params.get("cv_file").filename,
+                    "res_name": post.get("applicant_name"),
+                    "res_model": "hr.applicant",
+                    "res_id": applicant.id,
+                    "datas": base64.b64encode(
+                        attachment_data
+                    ),  # Recommended to use base64 for safety
                 }
             )
         )
 
-        # Attach the CV if one was uploaded
-        if "cv_file" in request.params:
-            attachment = (
-                request.env["ir.attachment"]
-                .sudo()
-                .create(
-                    {
-                        "name": request.params.get("cv_file").filename,
-                        "res_name": applicant.name,
-                        "res_model": "hr.applicant",
-                        "res_id": applicant.id,
-                        "datas": http.pycompat.to_text(
-                            request.params.get("cv_file").read()
-                        ),
-                    }
-                )
-            )
-            applicant.attachment_ids = [(4, attachment.id)]
-
-        # Redirect to a thank you page
-        return request.render("om_hr_portal.job_thank_you_template")
+    # Redirect to a thank you page
+    return request.render("om_hr_portal.job_thank_you_template")
