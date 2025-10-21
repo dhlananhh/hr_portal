@@ -37,44 +37,44 @@ class JobPortal(http.Controller):
         """
         return request.render("om_hr_portal.job_detail_template", {"job": job})
 
-
-@http.route("/jobs/apply", type="http", auth="public", website=True, methods=["POST"])
-def job_apply(self, **post):
-    """
-    Controller to handle the job application form submission.
-    """
-    # Create a new applicant record
-    applicant = (
-        request.env["hr.applicant"]
-        .sudo()
-        .create(
-            {
-                "partner_name": post.get("applicant_name"),
-                "email_from": post.get("applicant_email"),
-                "partner_phone": post.get("applicant_phone"),
-                "job_id": int(post.get("job_id")),
-            }
-        )
+    @http.route(
+        "/jobs/apply", type="http", auth="public", website=True, methods=["POST"]
     )
-
-    # Attach the CV if one was uploaded
-    if "cv_file" in request.params:
-        attachment_data = request.params.get("cv_file").read()
-        attachment = (
-            request.env["ir.attachment"]
-            .sudo()
-            .create(
-                {
-                    "name": request.params.get("cv_file").filename,
-                    "res_name": post.get("applicant_name"),
-                    "res_model": "hr.applicant",
-                    "res_id": applicant.id,
-                    "datas": base64.b64encode(
-                        attachment_data
-                    ),  # Recommended to use base64 for safety
-                }
+    def job_apply(self, **post):
+        """
+        Controller to handle the job application form submission.
+        """
+        try:
+            # Create a new applicant record
+            applicant = (
+                request.env["hr.applicant"]
+                .sudo()
+                .create(
+                    {
+                        "partner_name": post.get("applicant_name"),
+                        "email_from": post.get("applicant_email"),
+                        "partner_phone": post.get("applicant_phone"),
+                        "job_id": int(post.get("job_id")),
+                    }
+                )
             )
-        )
 
-    # Redirect to a thank you page
-    return request.render("om_hr_portal.job_thank_you_template")
+            # Attach the CV if one was uploaded
+            if "cv_file" in request.params:
+                attachment_data = request.params.get("cv_file").read()
+                request.env["ir.attachment"].sudo().create(
+                    {
+                        "name": request.params.get("cv_file").filename,
+                        "res_model": "hr.applicant",
+                        "res_id": applicant.id,
+                        "datas": base64.b64encode(attachment_data),
+                    }
+                )
+
+            # Redirect to the thank you page
+            return request.render("om_hr_portal.job_thank_you_template")
+
+        except Exception as e:
+            # In case of any error, render a clean error page instead of a generic 500 error
+            # This also helps in debugging
+            return request.render("om_hr_portal.job_error_template", {"error": e})

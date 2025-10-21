@@ -9,7 +9,9 @@
           <h1>Open Positions</h1>
           <div class="list-group mt-4">
             <t t-if="not jobs">
-              <div class="alert alert-info">There are currently no open positions.</div>
+              <div class="alert alert-info">
+                There are currently no open positions.
+              </div>
             </t>
             <t t-foreach="jobs" t-as="job">
               <a t-attf-href="/jobs/detail/{{ job.id }}"
@@ -75,9 +77,35 @@
     <t t-call="website.layout">
       <div id="wrap">
         <div class="container py-5 text-center">
-          <h1 class="display-4">Thank You!</h1>
-          <p class="lead">Your application has been submitted successfully.</p>
-          <a href="/jobs" class="btn btn-primary">Back to Job Listings</a>
+          <h1 class="display-4">Application Submitted Successfully!</h1>
+          <p class="lead">
+            Thank you for applying for this job position. We will process your CV
+            and get in touch within the next few days.
+          </p>
+          <a href="/jobs" class="btn btn-primary">
+            Back to Job Listings
+          </a>
+        </div>
+      </div>
+    </t>
+  </template>
+
+  <!-- Error Page Template -->
+  <template id="job_error_template" name="Application Error">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="container py-5 text-center">
+          <h1 class="display-4 text-danger">An Error Occurred</h1>
+          <p class="lead">
+            We're sorry, but something went wrong while submitting your application.
+          </p>
+          <p>
+            Please try again later or contact our support team.
+          </p>
+          <div t-if="error" class="alert alert-danger mt-3" t-esc="error" />
+          <a href="/jobs" class="btn btn-secondary mt-3">
+            Back to Job Listings
+          </a>
         </div>
       </div>
     </t>
