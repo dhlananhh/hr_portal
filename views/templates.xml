@@ -72,17 +72,19 @@
     </t>
   </template>
 
-  <!-- Thank You Page Template -->
+  <!-- Thank You Page Template (Improved) -->
   <template id="job_thank_you_template" name="Thank You">
     <t t-call="website.layout">
       <div id="wrap">
         <div class="container py-5 text-center">
-          <h1 class="display-4">Application Submitted Successfully!</h1>
+          <h1 class="display-4">
+            Application Submitted Successfully!
+          </h1>
           <p class="lead">
-            Thank you for applying for this job position. We will process your CV
-            and get in touch within the next few days.
+            Thank you for applying for this job position. We will process your CV and get in touch
+            within the next few days.
           </p>
-          <a href="/jobs" class="btn btn-primary">
+          <a href="/jobs" class="btn btn-primary mt-3">
             Back to Job Listings
           </a>
         </div>
@@ -90,7 +92,7 @@
     </t>
   </template>
 
-  <!-- Error Page Template -->
+  <!-- NEW: Error Page Template -->
   <template id="job_error_template" name="Application Error">
     <t t-call="website.layout">
       <div id="wrap">
@@ -110,4 +112,5 @@
       </div>
     </t>
   </template>
+
 </odoo>
