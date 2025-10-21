@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <!-- == INTERIOR PRODUCTS == -->
+
+    <record id="product_template_modern_sofa" model="product.template">
+      <field name="name">Modern Velvet Sofa</field>
+      <field name="website_published" eval="True" />
+      <field name="list_price">1299.99</field>
+      <field name="categ_id" ref="om_hr_portal.product_category_interior" />
+      <field
+        name="image_1920"
+        type="base64"
+        file="om_hr_portal/static/img/modern_velvet_sofa.png"
+      />
+      <field name="description_sale">
+        A stunning centerpiece for any modern living room, featuring
+        plush velvet and a sturdy oak frame.
+      </field>
+    </record>
+
+    <record id="product_template_oak_table" model="product.template">
+      <field name="name">Oak Dining Table</field>
+      <field name="website_published" eval="True" />
+      <field name="list_price">850.00</field>
+      <field name="categ_id" ref="om_hr_portal.product_category_interior" />
+      <field
+        name="image_1920"
+        type="base64"
+        file="om_hr_portal/static/img/oak_dining_table.png"
+      />
+      <field name="description_sale">
+        Gather your family around this beautifully crafted solid oak
+        dining table. Seats up to six people comfortably.
+      </field>
+    </record>
+
+
+    <!-- == EXTERIOR PRODUCTS == -->
+
+    <record id="product_template_wicker_chair" model="product.template">
+      <field name="name">All-Weather Wicker Chair</field>
+      <field name="website_published" eval="True" />
+      <field name="list_price">250.50</field>
+      <field name="categ_id" ref="om_hr_portal.product_category_exterior" />
+      <field
+        name="image_1920"
+        type="base64"
+        file="om_hr_portal/static/img/all_weather_wicker_chair.png"
+      />
+      <field name="description_sale">
+        Relax in your garden or patio with this durable and comfortable
+        all-weather wicker chair. Cushion included.
+      </field>
+    </record>
+
+    <record id="product_template_garden_bench" model="product.template">
+      <field name="name">Classic Garden Bench</field>
+      <field name="website_published" eval="True" />
+      <field name="list_price">399.00</field>
+      <field name="categ_id" ref="om_hr_portal.product_category_exterior" />
+      <field
+        name="image_1920"
+        type="base64"
+        file="om_hr_portal/static/img/classic_garden_bench.png"
+      />
+      <field name="description_sale">
+        A timeless addition to any outdoor space. Made from
+        weather-resistant acacia wood.
+      </field>
+    </record>
+
+  </data>
+</odoo>
