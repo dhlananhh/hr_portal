@@ -54,7 +54,7 @@ class JobPortal(http.Controller):
                 .sudo()
                 .create(
                     {
-                        "name": post.get("applicant_name"),
+                        "partner_name": post.get("applicant_name"),
                         "email_from": post.get("applicant_email"),
                         "partner_phone": post.get("applicant_phone"),
                     }
@@ -93,6 +93,5 @@ class JobPortal(http.Controller):
 
         except Exception as e:
             # In case of any error, render a clean error page.
-            # We log the error to the terminal for debugging purposes.
             _logger.error(f"Error during job application submission: {e}")
             return request.render("om_hr_portal.job_error_template", {"error": e})
