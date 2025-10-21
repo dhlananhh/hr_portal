@@ -10,6 +10,15 @@ _logger = logging.getLogger(__name__)
 
 class JobPortal(http.Controller):
 
+    @http.route("/", type="http", auth="public", website=True)
+    def homepage(self, **kwargs):
+        """
+        Controller for the website homepage.
+        """
+        # We can pass data to the template if needed, for now it's empty.
+        values = {}
+        return request.render("om_hr_portal.homepage_template", values)
+
     @http.route("/jobs", type="http", auth="public", website=True)
     def jobs_list(self, **kwargs):
         """

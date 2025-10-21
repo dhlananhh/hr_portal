@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+  <!-- Homepage Template -->
+  <template id="homepage_template" name="Homepage">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <!-- Hero Section -->
+        <div class="container py-5 text-center">
+          <h1 class="display-4 fw-bold">Find Your Next Career Opportunity</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+              We are a team of passionate people whose goal is to improve everyone's life through
+              disruptive products.
+              Join us to build a great future together.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <a href="/jobs" class="btn btn-primary btn-lg px-4 gap-3">
+                View Open Positions
+              </a>
+              <a href="/contactus" class="btn btn-outline-secondary btn-lg px-4">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Join Us? Feature Section -->
+        <div class="container px-4 py-5">
+          <h2 class="pb-2 border-bottom text-center mb-4">Why Join Us?</h2>
+
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <!-- Feature 1: Career Growth -->
+            <div class="feature col text-center">
+              <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <i class="fa fa-rocket p-3"></i>
+              </div>
+              <h3 class="fs-4">Career Growth</h3>
+              <p>We invest in your professional development with continuous learning, mentorship
+                programs, and clear paths for advancement.</p>
+            </div>
+            <!-- Feature 2: Innovative Culture -->
+            <div class="feature col text-center">
+              <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <i class="fa fa-users p-3"></i>
+              </div>
+              <h3 class="fs-4">Innovative Culture</h3>
+              <p>Be part of a dynamic and collaborative team where your ideas are valued and you can
+                make a real impact on our products.</p>
+            </div>
+            <!-- Feature 3: Work-Life Balance -->
+            <div class="feature col text-center">
+              <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <i class="fa fa-heart p-3"></i>
+              </div>
+              <h3 class="fs-4">Work-Life Balance</h3>
+              <p>We believe in a healthy work-life integration with flexible schedules, remote work
+                options, and generous paid time off.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </t>
+  </template>
+
   <!-- Jobs Listing Page Template -->
   <template id="job_list_template" name="Jobs">
     <t t-call="website.layout">
