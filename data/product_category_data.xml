@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <!-- Interior Furniture Category -->
+    <record id="product_category_interior" model="product.category">
+      <field name="name">Interior Furniture</field>
+    </record>
+
+    <!-- Exterior Furniture Category -->
+    <record id="product_category_exterior" model="product.category">
+      <field name="name">Exterior Furniture</field>
+    </record>
+
+  </data>
+</odoo>
