@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 import base64
+import logging
 
 from odoo import http
 from odoo.http import request
+
+_logger = logging.getLogger(__name__)
 
 
 class JobPortal(http.Controller):
@@ -45,7 +48,20 @@ class JobPortal(http.Controller):
         Controller to handle the job application form submission.
         """
         try:
-            # Create a new applicant record
+            # 1. Create the candidate record first. This model holds the person's info.
+            candidate = (
+                request.env["hr.candidate"]
+                .sudo()
+                .create(
+                    {
+                        "name": post.get("applicant_name"),
+                        "email_from": post.get("applicant_email"),
+                        "partner_phone": post.get("applicant_phone"),
+                    }
+                )
+            )
+
+            # 2. Create the applicant record, linking it to the newly created candidate.
             applicant = (
                 request.env["hr.applicant"]
                 .sudo()
@@ -55,6 +71,7 @@ class JobPortal(http.Controller):
                         "email_from": post.get("applicant_email"),
                         "partner_phone": post.get("applicant_phone"),
                         "job_id": int(post.get("job_id")),
+                        "candidate_id": candidate.id,
                     }
                 )
             )
@@ -75,6 +92,7 @@ class JobPortal(http.Controller):
             return request.render("om_hr_portal.job_thank_you_template")
 
         except Exception as e:
-            # In case of any error, render a clean error page instead of a generic 500 error
-            # This also helps in debugging
+            # In case of any error, render a clean error page.
+            # We log the error to the terminal for debugging purposes.
+            _logger.error(f"Error during job application submission: {e}")
             return request.render("om_hr_portal.job_error_template", {"error": e})
