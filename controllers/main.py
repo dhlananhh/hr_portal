@@ -19,6 +19,29 @@ class JobPortal(http.Controller):
         values = {}
         return request.render("om_hr_portal.homepage_template", values)
 
+    @http.route("/about-us", type="http", auth="public", website=True)
+    def about_us(self, **kwargs):
+        """Controller for the About Us page."""
+        return request.render("om_hr_portal.about_us_template", {})
+
+    @http.route("/services", type="http", auth="public", website=True)
+    def services(self, **kwargs):
+        """Controller for the Services page."""
+        return request.render("om_hr_portal.services_template", {})
+
+    @http.route("/legal", type="http", auth="public", website=True)
+    def legal_page(self, **kwargs):
+        """Controller for the Legal/Privacy Policy page."""
+        return request.render("om_hr_portal.legal_template", {})
+
+    @http.route("/products", type="http", auth="public", website=True)
+    def products_page(self, **kwargs):
+        """Controller for the products listing page."""
+        products = request.env["product.template"].search(
+            [("website_published", "=", True)]
+        )
+        return request.render("om_hr_portal.products_template", {"products": products})
+
     @http.route("/jobs", type="http", auth="public", website=True)
     def jobs_list(self, **kwargs):
         """

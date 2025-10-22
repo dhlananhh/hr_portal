@@ -67,30 +67,139 @@
     </t>
   </template>
 
+  <!-- About Us Page Template -->
+  <template id="about_us_template" name="About Us">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <div class="container py-5">
+          <h1 class="text-center mb-4">About Our Company</h1>
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <p class="lead">
+                We are a forward-thinking company dedicated to crafting high-quality
+                furniture that brings style and comfort to every space. Founded in 2010, our mission
+                has always been to merge timeless design with sustainable practices.
+              </p>
+              <p>
+                Our team of skilled artisans and designers work collaboratively to create pieces
+                that are not only beautiful but also built to last. We believe in innovation,
+                quality, and putting our customers first.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </t>
+  </template>
+
+  <!-- Services Page Template -->
+  <template id="services_template" name="Services">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <div class="container py-5">
+          <h1 class="text-center mb-4">Our Services</h1>
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h3 class="mt-4">Custom Furniture Design</h3>
+              <p>Work with our expert designers to create bespoke furniture pieces that perfectly
+                fit your vision and space requirements. From initial sketch to final product, we
+                guide you through every step.</p>
+
+              <h3 class="mt-4">Interior Design Consultation</h3>
+              <p>Our experienced interior designers can help you transform your home or office. We
+                provide consultation services to help you choose the right pieces, colors, and
+                layouts.</p>
+
+              <h3 class="mt-4">Delivery &amp; Installation</h3>
+              <p>We offer professional delivery and installation services to ensure your new
+                furniture arrives safely and is set up correctly in your space.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </t>
+  </template>
+
+  <!-- Legal Page Template -->
+  <template id="legal_template" name="Legal">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <div class="container py-5">
+          <h1 class="text-center mb-4">Legal &amp; Privacy Policy</h1>
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h3 class="mt-4">Terms of Service</h3>
+              <p>
+                Placeholder text for your company's terms of service. This section should detail
+                the rules and regulations for the use of your website and services.
+              </p>
+
+              <h3 class="mt-4">Privacy Policy</h3>
+              <p>
+                Placeholder text for your privacy policy. Explain what data you collect from users,
+                why you collect it, and how you protect it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </t>
+  </template>
+
   <!-- Jobs Listing Page Template -->
   <template id="job_list_template" name="Jobs">
     <t t-call="website.layout">
       <div id="wrap">
         <div class="container py-5">
-          <h1>Open Positions</h1>
-          <div class="list-group mt-4">
-            <t t-if="not jobs">
-              <div class="alert alert-info">
-                There are currently no open positions.
-              </div>
-            </t>
-            <t t-foreach="jobs" t-as="job">
-              <a t-attf-href="/jobs/detail/{{ job.id }}"
-                class="list-group-item list-group-item-action">
-                <h5 class="mb-1">
-                  <t t-esc="job.name" />
-                </h5>
-                <p class="mb-1">
-                  <t t-esc="job.department_id.name or 'N/A'" /> - <t
-                    t-esc="job.address_id.city or 'Remote'" />
-                </p>
-              </a>
-            </t>
+          <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Open Positions</h1>
+            <p class="lead text-muted">Join our growing team and help us build the future.</p>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <t t-if="not jobs">
+                <div class="alert alert-info">
+                  There are currently no open positions. Please check
+                  back later!
+                </div>
+              </t>
+
+              <t t-foreach="jobs" t-as="job">
+                <!-- Job Card -->
+                <div class="card mb-3 shadow-sm">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h4 class="card-title mb-0">
+                        <a t-att-href="job.website_url or f'/jobs/detail/{job.id}'"
+                          class="text-decoration-none">
+                          <t t-esc="job.name" />
+                        </a>
+                      </h4>
+                      <a t-att-href="job.website_url or f'/jobs/detail/{job.id}'"
+                        class="btn btn-primary btn-sm stretched-link">
+                        View Details
+                      </a>
+                    </div>
+                    <div class="text-muted mt-2">
+                      <span class="me-3" t-if="job.department_id">
+                        <i class="fa fa-building fa-fw me-1" />
+                        <t t-esc="job.department_id.name" />
+                      </span>
+                      <span class="me-3" t-if="job.address_id">
+                        <i class="fa fa-map-marker fa-fw me-1" />
+                        <t t-esc="job.address_id.city or 'Remote'" />
+                      </span>
+                      <span class="me-3" t-if="job.job_type">
+                        <i class="fa fa-briefcase fa-fw me-1" />
+                        <t
+                          t-esc="dict(job.fields_get(['job_type'])['job_type']['selection'])[job.job_type]" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </t>
+            </div>
           </div>
         </div>
       </div>
@@ -138,7 +247,7 @@
     </t>
   </template>
 
-  <!-- Thank You Page Template (Improved) -->
+  <!-- Thank You Page Template -->
   <template id="job_thank_you_template" name="Thank You">
     <t t-call="website.layout">
       <div id="wrap">
@@ -158,7 +267,51 @@
     </t>
   </template>
 
-  <!-- NEW: Error Page Template -->
+  <!-- NEW (FIXED): Products Page Template -->
+  <template id="products_template" name="Products">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <div class="container py-5">
+          <h1 class="text-center mb-5">Our Furniture Collection</h1>
+          <div class="row">
+            <t t-if="not products">
+              <div class="col-12">
+                <div class="alert alert-info text-center">
+                  There are currently no products available to display.
+                </div>
+              </div>
+            </t>
+            <t t-foreach="products" t-as="product">
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+
+                  <!-- THE FIX IS HERE -->
+                  <span t-field="product.website_image_1920"
+                    t-options="{'widget': 'image', 'class': 'card-img-top', 'alt_field': 'name', 'zoom': True}"
+                    style="height: 250px; object-fit: cover;" />
+
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">
+                      <!-- The product link is generated by Odoo eCommerce automatically -->
+                      <a t-att-href="product.website_url or '#'" class="text-decoration-none">
+                        <t t-esc="product.name" />
+                      </a>
+                    </h5>
+                    <div class="mt-auto">
+                      <span class="fw-bold fs-5" t-field="product.list_price"
+                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </div>
+        </div>
+      </div>
+    </t>
+  </template>
+
+  <!-- Error Page Template -->
   <template id="job_error_template" name="Application Error">
     <t t-call="website.layout">
       <div id="wrap">

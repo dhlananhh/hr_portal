@@ -10,17 +10,16 @@
     """,
     "author": "Lan Anh",
     "category": "Human Resources",
-    "depends": [
-        "base",
-        "hr",
-        "hr_recruitment",
-        "website",
-    ],
+    "depends": ["base", "hr", "hr_recruitment", "website", "website_sale"],
     "data": [
         # Security first
         "security/ir.model.access.csv",
+        # Data files
+        "data/product_category_data.xml",
+        "data/product_template_data.xml",
         # Then views
         "views/hr_employee_view.xml",
+        "views/hr_job_view.xml",
         "views/templates.xml",
     ],
     "installable": True,
