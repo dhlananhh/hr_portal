@@ -93,12 +93,16 @@
           <div class="row align-items-center g-5">
             <div class="col-lg-6">
               <h2 class="display-5 fw-bold mb-3">Our Journey</h2>
-              <p class="text-muted">Founded in 2010 from a small workshop, our passion for quality
+              <p class="text-muted">
+                Founded in 2010 from a small workshop, our passion for quality
                 craftsmanship has driven us to become a trusted name in the furniture industry. We
-                started with a simple idea: to build beautiful, durable furniture that people love.</p>
-              <p class="text-muted">Today, our team of skilled artisans and designers continue that
+                started with a simple idea: to build beautiful, durable furniture that people love.
+              </p>
+              <p class="text-muted">
+                Today, our team of skilled artisans and designers continue that
                 tradition, blending classic techniques with modern innovation to create pieces that
-                are not only aesthetically pleasing but also built to last for generations.</p>
+                are not only aesthetically pleasing but also built to last for generations.
+              </p>
             </div>
             <div class="col-lg-6">
               <img src="/om_hr_portal/static/img/workshop_image.png"
@@ -114,8 +118,9 @@
             <div class="row g-4 text-center">
               <div class="col-lg-4">
                 <div
-                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
-                  style="width: 3rem; height: 3rem;">
+                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                  style="width: 4rem; height: 4rem;"
+                >
                   <i class="fa fa-star" />
                 </div>
                 <h3 class="fs-4">Uncompromising Quality</h3>
@@ -124,8 +129,9 @@
               </div>
               <div class="col-lg-4">
                 <div
-                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
-                  style="width: 3rem; height: 3rem;">
+                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                  style="width: 4rem; height: 4rem;"
+                >
                   <i class="fa fa-leaf" />
                 </div>
                 <h3 class="fs-4">Sustainability</h3>
@@ -134,8 +140,9 @@
               </div>
               <div class="col-lg-4">
                 <div
-                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
-                  style="width: 3rem; height: 3rem;">
+                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                  style="width: 4rem; height: 4rem;"
+                >
                   <i class="fa fa-lightbulb-o" />
                 </div>
                 <h3 class="fs-4">Customer-Centric Innovation</h3>
@@ -168,9 +175,9 @@
         <section class="container text-center py-5">
           <h1 class="display-5 fw-bold">From Concept to Completion</h1>
           <p class="lead text-muted col-lg-8 mx-auto">
-            We offer a comprehensive range of services to bring your vision to life. Our team is
-            dedicated to providing exceptional quality and a seamless experience from start to
-            finish.
+            We offer a comprehensive range of services to bring your vision to life.
+            Our team is dedicated to providing exceptional quality and a seamless experience from
+            start to finish.
           </p>
         </section>
 
@@ -183,14 +190,17 @@
                 <div class="card h-100 text-center shadow-sm border-0">
                   <div class="card-body">
                     <div
-                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
-                      style="width: 5rem; height: 5rem;">
+                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                      style="width: 4rem; height: 4rem;"
+                    >
                       <i class="fa fa-pencil-square-o" />
                     </div>
                     <h3 class="card-title fs-4">Custom Furniture Design</h3>
-                    <p class="card-text">Work with our expert designers to create bespoke pieces
-                      that perfectly fit your vision and space. From initial sketch to final
-                      product, we guide you through every step.</p>
+                    <p class="card-text">
+                      Work with our expert designers to create bespoke pieces
+                      that perfectly fit your vision and space.
+                      From initial sketch to final product, we guide you through every step.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -199,14 +209,17 @@
                 <div class="card h-100 text-center shadow-sm border-0">
                   <div class="card-body">
                     <div
-                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
-                      style="width: 5rem; height: 5rem;">
+                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                      style="width: 4rem; height: 4rem;"
+                    >
                       <i class="fa fa-comments-o" />
                     </div>
                     <h3 class="card-title fs-4">Interior Design Consultation</h3>
-                    <p class="card-text">Our experienced designers help you transform your home or
-                      office. We provide consultation on choosing the right pieces, colors, and
-                      layouts to create a cohesive space.</p>
+                    <p class="card-text">
+                      Our experienced designers help you transform your home or office.
+                      We provide consultation on choosing the right pieces, colors, and
+                      layouts to create a cohesive space.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -215,14 +228,17 @@
                 <div class="card h-100 text-center shadow-sm border-0">
                   <div class="card-body">
                     <div
-                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
-                      style="width: 5rem; height: 5rem;">
+                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                      style="width: 4rem; height: 4rem;"
+                    >
                       <i class="fa fa-truck" />
                     </div>
                     <h3 class="card-title fs-4">Delivery &amp; Installation</h3>
-                    <p class="card-text">We offer professional, white-glove delivery and
-                      installation services to ensure your new furniture arrives safely and is set
-                      up perfectly in your space.</p>
+                    <p class="card-text">
+                      We offer professional, white-glove delivery and installation services to
+                      ensure your new furniture arrives safely and is set up perfectly in your
+                      space.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -233,37 +249,85 @@
         <!-- 3. Call to Action (CTA) -->
         <section class="container text-center py-5">
           <h2 class="fw-bold">Let's Build Something Amazing Together</h2>
-          <p class="lead text-muted col-lg-6 mx-auto">Have an idea? We'd love to hear about it.
-            Contact us today for a free consultation.</p>
+          <p class="lead text-muted col-lg-6 mx-auto">
+            Have an idea? We'd love to hear about it.
+            Contact us today for a free consultation.
+          </p>
           <a href="/contactus" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
         </section>
-
       </div>
     </t>
   </template>
 
   <!-- Legal Page Template -->
-  <template id="legal_template" name="Legal">
+  <template id="legal_template" name="Legal &amp; Privacy Policy">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure">
-        <div class="container py-5">
-          <h1 class="text-center mb-4">Legal &amp; Privacy Policy</h1>
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h3 class="mt-4">Terms of Service</h3>
-              <p>
-                Placeholder text for your company's terms of service. This section should detail
-                the rules and regulations for the use of your website and services.
-              </p>
+        <section class="container py-5">
 
-              <h3 class="mt-4">Privacy Policy</h3>
-              <p>
-                Placeholder text for your privacy policy. Explain what data you collect from users,
-                why you collect it, and how you protect it.
-              </p>
+          <!-- 1. Page Header -->
+          <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Legal &amp; Privacy Policy</h1>
+          </div>
+
+          <!-- 2. Main Content -->
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+              <!-- Terms of Service Section -->
+              <h2 class="fw-bold border-bottom pb-2 mb-3">Terms of Service</h2>
+              <p>Welcome to our website. If you continue to browse and use this website, you are
+                agreeing to comply with and be bound by the following terms and conditions of use,
+                which together with our privacy policy govern our relationship with you in relation
+                to this website. If you disagree with any part of these terms and conditions, please
+                do not use our website.</p>
+
+              <h3 class="fs-4 mt-4">1. Use of the Website</h3>
+              <p>The content of the pages of this website is for your general information and use
+                only. It is subject to change without notice. Unauthorized use of this website may
+                give rise to a claim for damages and/or be a criminal offense.</p>
+
+              <h3 class="fs-4 mt-4">2. Intellectual Property</h3>
+              <p>This website contains material which is owned by or licensed to us. This material
+                includes, but is not limited to, the design, layout, look, appearance and graphics.
+                Reproduction is prohibited other than in accordance with the copyright notice, which
+                forms part of these terms and conditions.</p>
+
+              <hr class="my-5" />
+
+              <!-- Privacy Policy Section -->
+              <h2 class="fw-bold border-bottom pb-2 mb-3">Privacy Policy</h2>
+              <p>This privacy policy sets out how we use and protect any information that you give
+                us when you use this website. We are committed to ensuring that your privacy is
+                protected.</p>
+
+              <h3 class="fs-4 mt-4">1. Information We Collect</h3>
+              <p>We may collect the following information: <strong>name, contact information
+                including email address, demographic information</strong> such as postcode,
+                preferences and interests, and other information relevant to customer surveys and/or
+                offers.</p>
+
+              <h3 class="fs-4 mt-4">2. How We Use the Information</h3>
+              <p>We require this information to understand your needs and provide you with a better
+                service, and in particular for the following reasons: internal record keeping,
+                improving our products and services, and periodically sending promotional emails
+                about new products or other information which we think you may find interesting.</p>
+
+              <h3 class="fs-4 mt-4">3. Security</h3>
+              <p>We are committed to ensuring that your information is secure. In order to prevent
+                unauthorized access or disclosure, we have put in place suitable physical,
+                electronic and managerial procedures to safeguard and secure the information we
+                collect online.</p>
+
+              <hr class="my-5" />
+
+              <!-- Contact Section -->
+              <h2 class="fw-bold text-center">Questions?</h2>
+              <p class="text-center">If you have any questions about these terms or our privacy
+                policy, please do not hesitate to <a href="/contactus">contact us</a>.</p>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </t>
   </template>
