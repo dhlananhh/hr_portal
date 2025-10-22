@@ -163,26 +163,81 @@
   <template id="services_template" name="Services">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure">
-        <div class="container py-5">
-          <h1 class="text-center mb-4">Our Services</h1>
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h3 class="mt-4">Custom Furniture Design</h3>
-              <p>Work with our expert designers to create bespoke furniture pieces that perfectly
-                fit your vision and space requirements. From initial sketch to final product, we
-                guide you through every step.</p>
 
-              <h3 class="mt-4">Interior Design Consultation</h3>
-              <p>Our experienced interior designers can help you transform your home or office. We
-                provide consultation services to help you choose the right pieces, colors, and
-                layouts.</p>
+        <!-- 1. Hero Section -->
+        <section class="container text-center py-5">
+          <h1 class="display-5 fw-bold">From Concept to Completion</h1>
+          <p class="lead text-muted col-lg-8 mx-auto">
+            We offer a comprehensive range of services to bring your vision to life. Our team is
+            dedicated to providing exceptional quality and a seamless experience from start to
+            finish.
+          </p>
+        </section>
 
-              <h3 class="mt-4">Delivery &amp; Installation</h3>
-              <p>We offer professional delivery and installation services to ensure your new
-                furniture arrives safely and is set up correctly in your space.</p>
+        <!-- 2. Services Grid -->
+        <div class="bg-light py-5">
+          <div class="container">
+            <div class="row g-4 row-cols-1 row-cols-md-3">
+              <!-- Service 1: Custom Design -->
+              <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0">
+                  <div class="card-body">
+                    <div
+                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
+                      style="width: 5rem; height: 5rem;">
+                      <i class="fa fa-pencil-square-o" />
+                    </div>
+                    <h3 class="card-title fs-4">Custom Furniture Design</h3>
+                    <p class="card-text">Work with our expert designers to create bespoke pieces
+                      that perfectly fit your vision and space. From initial sketch to final
+                      product, we guide you through every step.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Service 2: Consultation -->
+              <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0">
+                  <div class="card-body">
+                    <div
+                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
+                      style="width: 5rem; height: 5rem;">
+                      <i class="fa fa-comments-o" />
+                    </div>
+                    <h3 class="card-title fs-4">Interior Design Consultation</h3>
+                    <p class="card-text">Our experienced designers help you transform your home or
+                      office. We provide consultation on choosing the right pieces, colors, and
+                      layouts to create a cohesive space.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Service 3: Delivery -->
+              <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0">
+                  <div class="card-body">
+                    <div
+                      class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle"
+                      style="width: 5rem; height: 5rem;">
+                      <i class="fa fa-truck" />
+                    </div>
+                    <h3 class="card-title fs-4">Delivery &amp; Installation</h3>
+                    <p class="card-text">We offer professional, white-glove delivery and
+                      installation services to ensure your new furniture arrives safely and is set
+                      up perfectly in your space.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- 3. Call to Action (CTA) -->
+        <section class="container text-center py-5">
+          <h2 class="fw-bold">Let's Build Something Amazing Together</h2>
+          <p class="lead text-muted col-lg-6 mx-auto">Have an idea? We'd love to hear about it.
+            Contact us today for a free consultation.</p>
+          <a href="/contactus" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
+        </section>
+
       </div>
     </t>
   </template>
