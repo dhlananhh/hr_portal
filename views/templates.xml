@@ -2,66 +2,148 @@
 <odoo>
 
   <!-- Homepage Template -->
-  <template id="homepage_template" name="Homepage">
+  <template id="homepage_template" name="Landing Page">
     <t t-call="website.layout">
-      <div id="wrap">
-        <!-- Hero Section -->
-        <div class="container py-5 text-center">
-          <h1 class="display-4 fw-bold">Find Your Next Career Opportunity</h1>
-          <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">
-              We are a team of passionate people whose goal is to improve everyone's life through
-              disruptive products.
-              Join us to build a great future together.
+      <div id="wrap" class="oe_structure">
+
+        <!-- 1. HERO SECTION -->
+        <section class="position-relative d-flex align-items-center"
+          style="height: 80vh; background-image: url('/om_hr_portal/static/img/landing_hero.png'); background-size: cover; background-position: center;">
+          <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background-color: rgba(0, 0, 0, 0.5);"></div>
+          <div class="container text-center text-white position-relative">
+            <h1 class="display-3 fw-bolder mb-3">Design That Inspires. Quality That Lasts.</h1>
+            <p class="lead col-lg-8 mx-auto">Discover handcrafted furniture that transforms your
+              house into a home. Explore our collections and find the perfect piece for your space.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+              <a href="/products" class="btn btn-primary btn-lg px-4 gap-3">Explore Collections</a>
+              <a href="/about-us" class="btn btn-outline-light btn-lg px-4">Our Story</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. CORE SERVICES/VALUES SECTION -->
+        <section class="py-5 bg-light">
+          <div class="container">
+            <div class="row g-4 text-center">
+              <div class="col-lg-4">
+                <div
+                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                  style="width: 4rem; height: 4rem;">
+                  <i class="fa fa-star" />
+                </div>
+                <h3 class="fs-4 fw-bold">Uncompromising Quality</h3>
+                <p class="text-muted">From premium materials to meticulous craftsmanship, every
+                  piece is built to the highest standard.</p>
+              </div>
+              <div class="col-lg-4">
+                <div
+                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                  style="width: 4rem; height: 4rem;">
+                  <i class="fa fa-pencil-square-o" />
+                </div>
+                <h3 class="fs-4 fw-bold">Bespoke Design</h3>
+                <p class="text-muted">Work with our designers to create custom furniture that is
+                  uniquely yours.</p>
+              </div>
+              <div class="col-lg-4">
+                <div
+                  class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                  style="width: 4rem; height: 4rem;">
+                  <i class="fa fa-leaf" />
+                </div>
+                <h3 class="fs-4 fw-bold">Sustainable Practice</h3>
+                <p class="text-muted">We are committed to eco-friendly processes and responsibly
+                  sourced materials.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. FEATURED PRODUCTS SECTION -->
+        <section class="py-5">
+          <div class="container">
+            <h2 class="text-center display-6 fw-bold mb-5">Featured Products</h2>
+            <div class="row">
+              <t t-if="not featured_products">
+                <div class="col-12 text-center text-muted">Featured products will be displayed here.</div>
+              </t>
+              <t t-foreach="featured_products" t-as="product">
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow-sm border-0">
+                    <div class="card-img-top" style="height: 250px; overflow: hidden;">
+                      <a t-att-href="product.website_url or '#'">
+                        <img t-attf-src="/web/image/product.template/{{product.id}}/image_512"
+                          class="img img-fluid" alt="{{product.name}}"
+                          style="object-fit: cover; width: 100%; height: 100%;" />
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <a t-att-href="product.website_url or '#'" class="text-decoration-none"
+                          t-esc="product.name" />
+                      </h5>
+                      <p class="fw-bold" t-field="product.list_price"
+                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    </div>
+                  </div>
+                </div>
+              </t>
+            </div>
+            <div class="text-center mt-4">
+              <a href="/products" class="btn btn-outline-primary">View All Products</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. TESTIMONIAL SECTION -->
+        <section class="py-5 bg-light">
+          <div class="container">
+            <h2 class="text-center display-6 fw-bold mb-5">What Our Customers Say</h2>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <img src="/om_hr_portal/static/img/testimonial_avatar_1.png" alt="Client 1"
+                      class="rounded-circle mb-3"
+                      style="width: 80px; height: 80px; object-fit: cover;" />
+                    <p class="fst-italic">"The quality of the dining table we purchased is simply
+                      outstanding. It has become the centerpiece of our home. The entire process,
+                      from consultation to delivery, was seamless."</p>
+                    <h5 class="fw-bold mt-3 mb-0">Jessica Miller</h5>
+                    <small class="text-muted">Homeowner</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <img src="/om_hr_portal/static/img/testimonial_avatar_2.png" alt="Client 2"
+                      class="rounded-circle mb-3"
+                      style="width: 80px; height: 80px; object-fit: cover;" />
+                    <p class="fst-italic">"We worked with the design team for a custom bookshelf,
+                      and they brought our vision to life perfectly. The craftsmanship is
+                      impeccable. Highly recommended!"</p>
+                    <h5 class="fw-bold mt-3 mb-0">David Chen</h5>
+                    <small class="text-muted">Interior Designer</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. FINAL CALL TO ACTION (CTA) -->
+        <section class="container py-5">
+          <div class="p-5 text-center bg-light rounded-3">
+            <h2 class="fw-bold">Ready to Elevate Your Space?</h2>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+              Whether you're looking for a single piece or need help designing an entire room, our
+              team is here to help.
             </p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <a href="/jobs" class="btn btn-primary btn-lg px-4 gap-3">
-                View Open Positions
-              </a>
-              <a href="/contactus" class="btn btn-outline-secondary btn-lg px-4">
-                Contact Us
-              </a>
-            </div>
+            <a href="/contactus" class="btn btn-primary btn-lg mt-3">Start a Conversation</a>
           </div>
-        </div>
-
-        <!-- Why Join Us? Feature Section -->
-        <div class="container px-4 py-5">
-          <h2 class="pb-2 border-bottom text-center mb-4">Why Join Us?</h2>
-
-          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            <!-- Feature 1: Career Growth -->
-            <div class="feature col text-center">
-              <div
-                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <i class="fa fa-rocket p-3"></i>
-              </div>
-              <h3 class="fs-4">Career Growth</h3>
-              <p>We invest in your professional development with continuous learning, mentorship
-                programs, and clear paths for advancement.</p>
-            </div>
-            <!-- Feature 2: Innovative Culture -->
-            <div class="feature col text-center">
-              <div
-                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <i class="fa fa-users p-3"></i>
-              </div>
-              <h3 class="fs-4">Innovative Culture</h3>
-              <p>Be part of a dynamic and collaborative team where your ideas are valued and you can
-                make a real impact on our products.</p>
-            </div>
-            <!-- Feature 3: Work-Life Balance -->
-            <div class="feature col text-center">
-              <div
-                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <i class="fa fa-heart p-3"></i>
-              </div>
-              <h3 class="fs-4">Work-Life Balance</h3>
-              <p>We believe in a healthy work-life integration with flexible schedules, remote work
-                options, and generous paid time off.</p>
-            </div>
-          </div>
-        </div>
+        </section>
 
       </div>
     </t>
@@ -259,72 +341,131 @@
     </t>
   </template>
 
-  <!-- Legal Page Template -->
-  <template id="legal_template" name="Legal &amp; Privacy Policy">
+  <!-- TERMS AND CONDITIONS PAGE TEMPLATE -->
+  <template id="terms_and_conditions_template" name="Terms and Conditions">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure">
         <section class="container py-5">
 
           <!-- 1. Page Header -->
           <div class="text-center mb-5">
-            <h1 class="display-5 fw-bold">Legal &amp; Privacy Policy</h1>
+            <h1 class="display-5 fw-bold">Terms and Conditions</h1>
           </div>
 
-          <!-- 2. Main Content -->
           <div class="row justify-content-center">
             <div class="col-lg-8">
+              <p class="lead mb-4">
+                Please read these Terms and Conditions ("Terms") carefully before using our website
+                and purchasing our products or services. By accessing or using our services, you
+                agree to be bound by these Terms.
+              </p>
 
-              <!-- Terms of Service Section -->
-              <h2 class="fw-bold border-bottom pb-2 mb-3">Terms of Service</h2>
-              <p>Welcome to our website. If you continue to browse and use this website, you are
-                agreeing to comply with and be bound by the following terms and conditions of use,
-                which together with our privacy policy govern our relationship with you in relation
-                to this website. If you disagree with any part of these terms and conditions, please
-                do not use our website.</p>
+              <!-- 2. Table of Contents -->
+              <div class="card mb-5">
+                <div class="card-header">Table of Contents</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <a href="#section-1" class="text-decoration-none">1. General Terms</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-2" class="text-decoration-none">2. Products and Orders</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-3" class="text-decoration-none">3. Custom Design Services</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-4" class="text-decoration-none">4. Pricing and Payment</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-5" class="text-decoration-none">5. Shipping and Delivery</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-6" class="text-decoration-none">6. Returns and Refunds</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-7" class="text-decoration-none">7. Warranty</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-8" class="text-decoration-none">8. Limitation of Liability</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#section-9" class="text-decoration-none">9. Governing Law</a>
+                  </li>
+                </ul>
+              </div>
 
-              <h3 class="fs-4 mt-4">1. Use of the Website</h3>
-              <p>The content of the pages of this website is for your general information and use
-                only. It is subject to change without notice. Unauthorized use of this website may
-                give rise to a claim for damages and/or be a criminal offense.</p>
+              <!-- 3. Detailed Content -->
+              <div id="section-1" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">1. General Terms</h3>
+                <p>This website is operated by VNDT. Throughout the site, the terms
+                  “we”, “us” and “our” refer to VNDT. By visiting our site and/or
+                  purchasing something from us, you engage in our “Service” and agree to be bound by
+                  the following terms and conditions.</p>
+              </div>
 
-              <h3 class="fs-4 mt-4">2. Intellectual Property</h3>
-              <p>This website contains material which is owned by or licensed to us. This material
-                includes, but is not limited to, the design, layout, look, appearance and graphics.
-                Reproduction is prohibited other than in accordance with the copyright notice, which
-                forms part of these terms and conditions.</p>
+              <div id="section-2" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">2. Products and Orders</h3>
+                <p>Product information, including images and descriptions, is provided for
+                  informational purposes. While we strive for accuracy, variations in color,
+                  texture, and grain are natural characteristics of wood and other materials and are
+                  not considered defects. All orders are subject to acceptance and availability.</p>
+              </div>
 
-              <hr class="my-5" />
+              <div id="section-3" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">3. Custom Design Services</h3>
+                <p>For custom design services, a non-refundable design fee is required to begin the
+                  process. All custom designs, drawings, and specifications remain the intellectual
+                  property of VNDT until the final product is paid for in full.
+                  Timelines for custom projects are estimates and may vary.</p>
+              </div>
 
-              <!-- Privacy Policy Section -->
-              <h2 class="fw-bold border-bottom pb-2 mb-3">Privacy Policy</h2>
-              <p>This privacy policy sets out how we use and protect any information that you give
-                us when you use this website. We are committed to ensuring that your privacy is
-                protected.</p>
+              <div id="section-4" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">4. Pricing and Payment</h3>
+                <p>All prices are listed in USD and are subject to change
+                  without notice. We accept payments via Visa, MasterCard, Bank Transfer.
+                  For custom orders, a 50% deposit is required to
+                  commence production, with the remaining balance due prior to shipping.</p>
+              </div>
 
-              <h3 class="fs-4 mt-4">1. Information We Collect</h3>
-              <p>We may collect the following information: <strong>name, contact information
-                including email address, demographic information</strong> such as postcode,
-                preferences and interests, and other information relevant to customer surveys and/or
-                offers.</p>
+              <div id="section-5" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">5. Shipping and Delivery</h3>
+                <p>Shipping costs are calculated at checkout and vary based on destination and order
+                  size. We offer standard and white-glove delivery options. Delivery times
+                  are estimates and we are not liable for delays caused by third-party carriers or
+                  unforeseen circumstances.</p>
+              </div>
 
-              <h3 class="fs-4 mt-4">2. How We Use the Information</h3>
-              <p>We require this information to understand your needs and provide you with a better
-                service, and in particular for the following reasons: internal record keeping,
-                improving our products and services, and periodically sending promotional emails
-                about new products or other information which we think you may find interesting.</p>
+              <div id="section-6" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">6. Returns and Refunds</h3>
+                <p> Standard, in-stock items may be returned within 14 days of receipt for a refund,
+                  minus a restocking fee. Items must be in original, unused condition. <strong>Custom-made
+                  and special-order items are non-returnable and non-refundable.</strong>
+                </p>
+              </div>
 
-              <h3 class="fs-4 mt-4">3. Security</h3>
-              <p>We are committed to ensuring that your information is secure. In order to prevent
-                unauthorized access or disclosure, we have put in place suitable physical,
-                electronic and managerial procedures to safeguard and secure the information we
-                collect online.</p>
+              <div id="section-7" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">7. Warranty</h3>
+                <p>We offer a 1-year limited warranty on our furniture against manufacturing
+                  defects. This warranty does not cover normal wear and tear, damage from misuse, or
+                  variations in natural materials. For warranty claims, please contact us with your
+                  proof of purchase.</p>
+              </div>
 
-              <hr class="my-5" />
+              <div id="section-8" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">8. Limitation of Liability</h3>
+                <p>In no event shall VNDT, our directors, or employees be liable for
+                  any injury, loss, or claim arising from your use of any of our products or
+                  services.</p>
+              </div>
 
-              <!-- Contact Section -->
-              <h2 class="fw-bold text-center">Questions?</h2>
-              <p class="text-center">If you have any questions about these terms or our privacy
-                policy, please do not hesitate to <a href="/contactus">contact us</a>.</p>
+              <div id="section-9" class="mb-5">
+                <h3 class="fw-bold border-bottom pb-2 mb-3">9. Governing Law</h3>
+                <p>These Terms shall be governed by and construed in accordance with the laws of
+                  Vietnam, without regard to its conflict of law provisions.</p>
+              </div>
+
+              <p class="text-center fst-italic">If you have any questions about these Terms, please <a
+                  href="/contactus">contact us</a>.</p>
             </div>
           </div>
         </section>

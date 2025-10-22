@@ -13,10 +13,13 @@ class JobPortal(http.Controller):
     @http.route("/", type="http", auth="public", website=True)
     def homepage(self, **kwargs):
         """
-        Controller for the website homepage.
+        Controller for the website's main landing page.
         """
-        # We can pass data to the template if needed, for now it's empty.
-        values = {}
+        featured_products = request.env["product.template"].search(
+            [("website_published", "=", True)], limit=3, order="create_date desc"
+        )
+
+        values = {"featured_products": featured_products}
         return request.render("om_hr_portal.homepage_template", values)
 
     @http.route("/about-us", type="http", auth="public", website=True)
@@ -29,10 +32,10 @@ class JobPortal(http.Controller):
         """Controller for the Services page."""
         return request.render("om_hr_portal.services_template", {})
 
-    @http.route("/legal", type="http", auth="public", website=True)
-    def legal_page(self, **kwargs):
-        """Controller for the Legal/Privacy Policy page."""
-        return request.render("om_hr_portal.legal_template", {})
+    @http.route("/terms-and-conditions", type="http", auth="public", website=True)
+    def terms_page(self, **kwargs):
+        """Controller for the Terms and Conditions page."""
+        return request.render("om_hr_portal.terms_and_conditions_template", {})
 
     @http.route("/products", type="http", auth="public", website=True)
     def products_page(self, **kwargs):
