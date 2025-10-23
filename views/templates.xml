@@ -100,13 +100,17 @@
         <section class="py-5 bg-light">
           <div class="container">
             <h2 class="text-center display-6 fw-bold mb-5">What Our Customers Say</h2>
-            <div class="row g-4">
-              <div class="col-md-6">
+            <div class="row g-4 row-cols-1 row-cols-lg-3">
+              <!-- Testimonial 1 -->
+              <div class="col">
                 <div class="card h-100 border-0 shadow-sm">
                   <div class="card-body text-center">
-                    <img src="/om_hr_portal/static/img/testimonial_avatar_1.png" alt="Client 1"
+                    <img
+                      src="/om_hr_portal/static/img/testimonial_avatar_1.png"
+                      alt="Jessica Miller"
                       class="rounded-circle mb-3"
-                      style="width: 80px; height: 80px; object-fit: cover;" />
+                      style="width: 80px; height: 80px; object-fit: cover;"
+                    />
                     <p class="fst-italic">"The quality of the dining table we purchased is simply
                       outstanding. It has become the centerpiece of our home. The entire process,
                       from consultation to delivery, was seamless."</p>
@@ -115,17 +119,39 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <!-- Testimonial 2 -->
+              <div class="col">
                 <div class="card h-100 border-0 shadow-sm">
                   <div class="card-body text-center">
-                    <img src="/om_hr_portal/static/img/testimonial_avatar_2.png" alt="Client 2"
+                    <img
+                      src="/om_hr_portal/static/img/testimonial_avatar_2.png"
+                      alt="David Chen"
                       class="rounded-circle mb-3"
-                      style="width: 80px; height: 80px; object-fit: cover;" />
+                      style="width: 80px; height: 80px; object-fit: cover;"
+                    />
                     <p class="fst-italic">"We worked with the design team for a custom bookshelf,
                       and they brought our vision to life perfectly. The craftsmanship is
                       impeccable. Highly recommended!"</p>
                     <h5 class="fw-bold mt-3 mb-0">David Chen</h5>
                     <small class="text-muted">Interior Designer</small>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial 3 -->
+              <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <img
+                      src="/om_hr_portal/static/img/testimonial_avatar_3.png"
+                      alt="Samantha Wright"
+                      class="rounded-circle mb-3"
+                      style="width: 80px; height: 80px; object-fit: cover;"
+                    />
+                    <p class="fst-italic">"Atelier Forma transformed our office space. Their
+                      attention to detail and ability to blend function with beautiful design is
+                      truly impressive. Our team loves the new environment."</p>
+                    <h5 class="fw-bold mt-3 mb-0">Samantha Wright</h5>
+                    <small class="text-muted">Business Owner</small>
                   </div>
                 </div>
               </div>
