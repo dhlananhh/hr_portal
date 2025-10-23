@@ -2,7 +2,7 @@
 <odoo>
 
   <!-- Homepage Template -->
-  <template id="homepage_template" name="Landing Page">
+  <template id="homepage_template" name="Home Page">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure">
 
@@ -397,8 +397,8 @@
               <!-- 3. Detailed Content -->
               <div id="section-1" class="mb-5">
                 <h3 class="fw-bold border-bottom pb-2 mb-3">1. General Terms</h3>
-                <p>This website is operated by VNDT. Throughout the site, the terms
-                  “we”, “us” and “our” refer to VNDT. By visiting our site and/or
+                <p>This website is operated by Atelier Forma. Throughout the site, the terms
+                  “we”, “us” and “our” refer to Atelier Forma. By visiting our site and/or
                   purchasing something from us, you engage in our “Service” and agree to be bound by
                   the following terms and conditions.</p>
               </div>
@@ -415,7 +415,7 @@
                 <h3 class="fw-bold border-bottom pb-2 mb-3">3. Custom Design Services</h3>
                 <p>For custom design services, a non-refundable design fee is required to begin the
                   process. All custom designs, drawings, and specifications remain the intellectual
-                  property of VNDT until the final product is paid for in full.
+                  property of Atelier Forma until the final product is paid for in full.
                   Timelines for custom projects are estimates and may vary.</p>
               </div>
 
@@ -453,7 +453,7 @@
 
               <div id="section-8" class="mb-5">
                 <h3 class="fw-bold border-bottom pb-2 mb-3">8. Limitation of Liability</h3>
-                <p>In no event shall VNDT, our directors, or employees be liable for
+                <p>In no event shall Atelier Forma, our directors, or employees be liable for
                   any injury, loss, or claim arising from your use of any of our products or
                   services.</p>
               </div>
@@ -461,13 +461,235 @@
               <div id="section-9" class="mb-5">
                 <h3 class="fw-bold border-bottom pb-2 mb-3">9. Governing Law</h3>
                 <p>These Terms shall be governed by and construed in accordance with the laws of
-                  Vietnam, without regard to its conflict of law provisions.</p>
+                  Santa Barbara, California, USA, without regard to its conflict of law provisions.</p>
               </div>
 
               <p class="text-center fst-italic">If you have any questions about these Terms, please <a
                   href="/contactus">contact us</a>.</p>
             </div>
           </div>
+        </section>
+      </div>
+    </t>
+  </template>
+
+  <!-- SHIPPING & DELIVERY PAGE TEMPLATE -->
+  <template id="shipping_and_delivery_template" name="Shipping &amp; Delivery">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <section class="container py-5">
+
+          <!-- 1. Hero Section -->
+          <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Shipping + Delivery</h1>
+            <p class="lead text-muted col-lg-8 mx-auto">
+              We've streamlined our process to ensure your new furniture arrives safely and
+              efficiently. Below you’ll find everything you need to know about our delivery options.
+            </p>
+          </div>
+
+          <!-- 2. Delivery Options Grid -->
+          <div class="row g-4 row-cols-1 row-cols-lg-3 text-center mb-5">
+            <!-- Option 1: Small Parcel -->
+            <div class="col">
+              <div class="card h-100 border-light shadow-sm">
+                <div class="card-body p-4">
+                  <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                    style="width: 4rem; height: 4rem;">
+                    <i class="fa fa-archive" />
+                  </div>
+                  <h3 class="fs-4 fw-bold">Small Parcel</h3>
+                  <p class="text-muted">Smaller items like accessories and select decor ship via
+                    carriers such as FedEx or UPS. Your order will be delivered to your doorstep
+                    without a signature requirement.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Option 2: Threshold Delivery -->
+            <div class="col">
+              <div class="card h-100 border-light shadow-sm">
+                <div class="card-body p-4">
+                  <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                    style="width: 4rem; height: 4rem;">
+                    <i class="fa fa-home" />
+                  </div>
+                  <h3 class="fs-4 fw-bold">Threshold Delivery</h3>
+                  <p class="text-muted">Larger items are delivered "through the threshold" of your
+                    ground-floor entrance. This service does not include room placement, unpacking,
+                    or assembly. You'll be contacted to schedule a delivery appointment.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Option 3: White Glove -->
+            <div class="col">
+              <div class="card h-100 border-light shadow-sm">
+                <div class="card-body p-4">
+                  <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-3 mb-3 rounded-circle"
+                    style="width: 4rem; height: 4rem;">
+                    <i class="fa fa-star" />
+                  </div>
+                  <h3 class="fs-4 fw-bold">White Glove Service</h3>
+                  <p class="text-muted">Our premium service. Your order is delivered to your room of
+                    choice, unpacked, assembled, and all packaging materials are removed. This is
+                    the ultimate hassle-free experience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Key Information Sections -->
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <hr class="my-5" />
+              <div class="mb-5">
+                <h3 class="fw-bold mb-3">What to Expect on Delivery Day</h3>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-2">
+                    <i class="fa fa-check text-primary me-2 mt-1" />
+                    <span><strong>Measure Up:</strong> Please measure your doorways, hallways, and
+                      stairwells to ensure your furniture will fit.</span>
+                  </li>
+                  <li class="d-flex mb-2">
+                    <i class="fa fa-check text-primary me-2 mt-1" />
+                    <span><strong>Inspect on Arrival:</strong> Before signing the delivery receipt,
+                      please inspect your items for any damage.</span>
+                  </li>
+                  <li class="d-flex mb-2">
+                    <i class="fa fa-check text-primary me-2 mt-1" />
+                    <span><strong>Report Issues:</strong> Any damage must be reported within 48
+                      hours of delivery. Please refer to our Returns Policy for more details.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <hr class="my-5" />
+              <div class="mb-5">
+                <h3 class="fw-bold mb-3">Shipping Costs</h3>
+                <p>Shipping costs are calculated based on your order total and selected delivery
+                  method. The final cost will be displayed at checkout before you confirm your
+                  order. For orders over $3000, Threshold Delivery is complimentary.</p>
+              </div>
+
+              <hr class="my-5" />
+              <!-- 4. CTA -->
+              <div class="text-center">
+                <h3 class="fw-bold">Have More Questions?</h3>
+                <p class="text-muted">Our customer service team is here to help. Get in touch with
+                  us for any specific inquiries about your order or our delivery process.</p>
+                <a href="/contactus" class="btn btn-primary btn-lg mt-3">Contact Support</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </t>
+  </template>
+
+  <!-- RETURNS & EXCHANGES PAGE TEMPLATE -->
+  <template id="returns_and_exchanges_template" name="Returns &amp; Exchanges">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <section class="container py-5">
+
+          <!-- 1. Hero Section -->
+          <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Returns + Exchanges</h1>
+            <p class="lead text-muted col-lg-9 mx-auto">
+              We want you to love what you buy. If you're not completely satisfied with your
+              purchase, we're here to help.
+            </p>
+          </div>
+
+          <!-- 2. Key Policy Grid -->
+          <div class="row g-4 row-cols-1 row-cols-lg-3 text-center mb-5">
+            <!-- Policy 1: Standard Items -->
+            <div class="col">
+              <div class="card h-100 border-light shadow-sm">
+                <div class="card-body p-4">
+                  <h3 class="fs-4 fw-bold mb-3">Standard In-Stock Items</h3>
+                  <p class="text-muted">Most standard items can be returned within <strong>30 days</strong>
+                    of delivery. A 15% restocking fee will apply. Items must be in new, unused
+                    condition and in their original packaging.</p>
+                  <p>
+                    <a href="#return-process">How to start a return</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Policy 2: Custom Items -->
+            <div class="col">
+              <div class="card h-100 border-light shadow-sm bg-light">
+                <div class="card-body p-4">
+                  <h3 class="fs-4 fw-bold mb-3">Custom &amp; Special Orders</h3>
+                  <p class="text-muted">Because these pieces are made just for you, <strong>custom-made,
+                    modified, and special-order items are non-returnable and non-refundable</strong>
+                    once the order is placed.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Policy 3: Damaged Items -->
+            <div class="col">
+              <div class="card h-100 border-light shadow-sm">
+                <div class="card-body p-4">
+                  <h3 class="fs-4 fw-bold mb-3">Damaged or Defective Items</h3>
+                  <p class="text-muted">Please inspect your order upon delivery. If you receive a
+                    damaged item, note it on the delivery receipt and contact us within <strong>48
+                    hours</strong>. We will work to resolve the issue promptly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Return Process Section -->
+          <div class="row justify-content-center" id="return-process">
+            <div class="col-lg-9">
+              <hr class="my-5" />
+              <h2 class="text-center fw-bold mb-5">How to Initiate a Return</h2>
+              <div class="row g-4">
+                <div class="col-md-4 d-flex">
+                  <div class="display-4 fw-bold text-primary me-3">1</div>
+                  <div>
+                    <h4 class="fw-bold">Contact Us</h4>
+                    <p class="text-muted">Email our support team at [support@yourcompany.com] with
+                      your order number and reason for return.</p>
+                  </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                  <div class="display-4 fw-bold text-primary me-3">2</div>
+                  <div>
+                    <h4 class="fw-bold">Prepare for Pickup</h4>
+                    <p class="text-muted">Carefully repackage the item in its original box. We will
+                      arrange for a carrier to pick it up.</p>
+                  </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                  <div class="display-4 fw-bold text-primary me-3">3</div>
+                  <div>
+                    <h4 class="fw-bold">Receive Your Refund</h4>
+                    <p class="text-muted">Once we receive and inspect the item, your refund (minus
+                      fees) will be processed within 5-7 business days.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. FAQ & Contact Section -->
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <hr class="my-5" />
+              <div class="text-center">
+                <h3 class="fw-bold">Any Questions?</h3>
+                <p class="text-muted">Our team is ready to assist with any questions you may have
+                  about our returns and exchanges policy.</p>
+                <a href="/contactus" class="btn btn-outline-primary mt-3">Contact Customer Service</a>
+              </div>
+            </div>
+          </div>
+
         </section>
       </div>
     </t>

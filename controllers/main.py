@@ -10,6 +10,7 @@ _logger = logging.getLogger(__name__)
 
 class JobPortal(http.Controller):
 
+    # Home Page
     @http.route("/", type="http", auth="public", website=True)
     def homepage(self, **kwargs):
         """
@@ -22,11 +23,13 @@ class JobPortal(http.Controller):
         values = {"featured_products": featured_products}
         return request.render("om_hr_portal.homepage_template", values)
 
+    # About Us Page
     @http.route("/about-us", type="http", auth="public", website=True)
     def about_us(self, **kwargs):
         """Controller for the About Us page."""
         return request.render("om_hr_portal.about_us_template", {})
 
+    # Services Page
     @http.route("/services", type="http", auth="public", website=True)
     def services(self, **kwargs):
         """Controller for the Services page."""
@@ -37,6 +40,23 @@ class JobPortal(http.Controller):
         """Controller for the Terms and Conditions page."""
         return request.render("om_hr_portal.terms_and_conditions_template", {})
 
+    # Shipping and Delivery Page
+    @http.route(
+        "/shipping-and-delivery", type="http", auth="public", website=True, sitemap=True
+    )
+    def shipping_page(self, **kwargs):
+        """Controller for the Shipping & Delivery information page."""
+        return request.render("om_hr_portal.shipping_and_delivery_template", {})
+
+    # Returns and Exchanges Page
+    @http.route(
+        "/returns-and-exchanges", type="http", auth="public", website=True, sitemap=True
+    )
+    def returns_page(self, **kwargs):
+        """Controller for the Returns & Exchanges information page."""
+        return request.render("om_hr_portal.returns_and_exchanges_template", {})
+
+    # Products Page
     @http.route("/products", type="http", auth="public", website=True)
     def products_page(self, **kwargs):
         """Controller for the products listing page."""
@@ -45,6 +65,7 @@ class JobPortal(http.Controller):
         )
         return request.render("om_hr_portal.products_template", {"products": products})
 
+    # Jobs Page
     @http.route("/jobs", type="http", auth="public", website=True)
     def jobs_list(self, **kwargs):
         """
@@ -65,6 +86,7 @@ class JobPortal(http.Controller):
             "om_hr_portal.job_list_template", {"jobs": published_jobs}
         )
 
+    # Job Detail Page
     @http.route(
         '/jobs/detail/<model("hr.job"):job>', type="http", auth="public", website=True
     )
@@ -75,6 +97,7 @@ class JobPortal(http.Controller):
         """
         return request.render("om_hr_portal.job_detail_template", {"job": job})
 
+    # Job Apply Page
     @http.route(
         "/jobs/apply", type="http", auth="public", website=True, methods=["POST"]
     )
