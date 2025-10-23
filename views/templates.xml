@@ -141,7 +141,12 @@
               Whether you're looking for a single piece or need help designing an entire room, our
               team is here to help.
             </p>
-            <a href="/contactus" class="btn btn-primary btn-lg mt-3">Start a Conversation</a>
+            <a
+              href="/contactus"
+              class="btn btn-primary btn-lg mt-3"
+            >
+              Start a Conversation
+            </a>
           </div>
         </section>
 
@@ -335,7 +340,12 @@
             Have an idea? We'd love to hear about it.
             Contact us today for a free consultation.
           </p>
-          <a href="/contactus" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
+          <a
+            href="/contactus"
+            class="btn btn-primary btn-lg mt-3"
+          >
+            Get in Touch
+          </a>
         </section>
       </div>
     </t>
@@ -579,7 +589,12 @@
                 <h3 class="fw-bold">Have More Questions?</h3>
                 <p class="text-muted">Our customer service team is here to help. Get in touch with
                   us for any specific inquiries about your order or our delivery process.</p>
-                <a href="/contactus" class="btn btn-primary btn-lg mt-3">Contact Support</a>
+                <a
+                  href="/contactus"
+                  class="btn btn-primary btn-lg mt-3"
+                >
+                  Contact Support
+                </a>
               </div>
             </div>
           </div>
@@ -589,14 +604,17 @@
   </template>
 
   <!-- RETURNS & EXCHANGES PAGE TEMPLATE -->
-  <template id="returns_and_exchanges_template" name="Returns &amp; Exchanges">
+  <template
+    id="returns_and_exchanges_template"
+    name="Returns &amp; Exchanges"
+  >
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure">
         <section class="container py-5">
 
           <!-- 1. Hero Section -->
           <div class="text-center mb-5">
-            <h1 class="display-5 fw-bold">Returns + Exchanges</h1>
+            <h1 class="display-5 fw-bold">Returns and Exchanges</h1>
             <p class="lead text-muted col-lg-9 mx-auto">
               We want you to love what you buy. If you're not completely satisfied with your
               purchase, we're here to help.
@@ -691,6 +709,449 @@
           </div>
 
         </section>
+      </div>
+    </t>
+  </template>
+
+  <!-- FAQ PAGE TEMPLATE -->
+  <template id="faq_page_template" name="FAQ">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <section class="container py-5">
+
+          <!-- 1. Hero Section -->
+          <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Frequently Asked Questions</h1>
+            <p class="lead text-muted col-lg-8 mx-auto">
+              Have a question? We're here to help. Find answers to common questions about our
+              products, shipping, and more.
+            </p>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+
+              <!-- 2. Category: Products & Orders -->
+              <h2 class="fw-bold mb-4">Products &amp; Orders</h2>
+              <div class="accordion" id="faqProductsOrders">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                      aria-controls="collapseOne">
+                      Are there variations in wood grain and color?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse"
+                    aria-labelledby="headingOne" data-bs-parent="#faqProductsOrders">
+                    <div class="accordion-body">
+                      <strong>Yes.</strong> Wood is a natural material, and variations in grain,
+                      color, and texture are inherent characteristics. These variations are not
+                      considered defects but rather part of the unique beauty of each piece. </div>
+                  </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                      aria-controls="collapseTwo">
+                      What is the lead time for custom orders?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo" data-bs-parent="#faqProductsOrders">
+                    <div class="accordion-body"> Lead times for custom pieces typically range from <strong>8-12
+                      weeks</strong>. This allows our artisans the time to meticulously craft your
+                      furniture to our high standards. A more specific timeline will be provided
+                      when you place your order. </div>
+                  </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                      aria-expanded="false" aria-controls="collapseThree">
+                      Can I see material samples?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="headingThree" data-bs-parent="#faqProductsOrders">
+                    <div class="accordion-body"> Absolutely. We encourage you to order material
+                      samples to see the colors and textures in your own space. You can order
+                      samples directly from the product page or by <a href="/contactus">contacting
+                      our team</a>. </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-5" />
+
+              <!-- 2. Category: Shipping & Delivery -->
+              <h2 class="fw-bold mb-4">Shipping &amp; Delivery</h2>
+              <div class="accordion" id="faqShipping">
+                <!-- Question 4 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                      aria-controls="collapseFour">
+                      How can I track my order?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse"
+                    aria-labelledby="headingFour" data-bs-parent="#faqShipping">
+                    <div class="accordion-body">
+                      Once your order has shipped, you will receive an email with tracking
+                      information. For larger items requiring freight delivery, our delivery partner
+                      will contact you directly to schedule an appointment.
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 5 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                      aria-controls="collapseFive">
+                      What is the difference between Threshold and White Glove delivery?
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse"
+                    aria-labelledby="headingFive" data-bs-parent="#faqShipping">
+                    <div class="accordion-body">
+                      <strong>Threshold Delivery</strong> means your items will be delivered to the
+                      first dry area of your home (e.g., inside your front door or garage). <strong>White
+                      Glove Service</strong> is our premium option where our team will deliver to
+                      your room of choice, unpack, assemble, and remove all packaging materials. For
+                      more details, please see our <a href="/shipping-and-delivery">Shipping +
+                      Delivery</a> page. </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-5" />
+
+              <!-- 4. Final CTA Section -->
+              <div class="text-center bg-light p-5 rounded-3">
+                <h3 class="fw-bold">Still have questions?</h3>
+                <p class="text-muted">If you can't find the answer you're looking for, please don't
+                  hesitate to reach out. Our customer support team is happy to help.</p>
+                <a
+                  href="/contactus"
+                  class="btn btn-primary mt-3"
+                >
+                  Contact Us
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </t>
+  </template>
+
+  <!-- DESIGN SERVICES PAGE TEMPLATE -->
+  <template id="design_services_template" name="Design Services">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+
+        <!-- 1. Hero Section -->
+        <section class="position-relative d-flex align-items-center text-center text-white"
+          style="min-height: 60vh; background-image: url('/om_hr_portal/static/img/design_service_hero.png'); background-size: cover; background-position: center;">
+          <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background-color: rgba(0, 0, 0, 0.4);"></div>
+          <div class="container position-relative">
+            <h1 class="display-3 fw-bold">Let's create your perfect space, together.</h1>
+            <p class="lead col-lg-9 mx-auto mt-3">
+              Our complimentary design service connects you with professional designers to bring
+              your vision to life.
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. "How It Works" Section -->
+        <section class="container py-5">
+          <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold">How It Works</h2>
+          </div>
+          <!-- Step 1 -->
+          <div class="row align-items-center g-5 mb-5">
+            <div class="col-lg-6">
+              <img src="/om_hr_portal/static/img/design_step_1_consult.png"
+                class="img-fluid rounded shadow" alt="Consultation" />
+            </div>
+            <div class="col-lg-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="display-4 fw-bold text-primary me-3">1</div>
+                <h3 class="fw-bold mb-0">Consult</h3>
+              </div>
+              <p class="text-muted">It all starts with a conversation. Share your ideas,
+                inspiration, and the details of your space with one of our expert designers. We'll
+                discuss your lifestyle, budget, and functional needs to understand your vision
+                completely.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+            <div class="col-lg-6">
+              <img src="/om_hr_portal/static/img/design_step_2_design.png"
+                class="img-fluid rounded shadow" alt="Design Plan" />
+            </div>
+            <div class="col-lg-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="display-4 fw-bold text-primary me-3">2</div>
+                <h3 class="fw-bold mb-0">Design</h3>
+              </div>
+              <p class="text-muted">Our designers will get to work, creating a personalized plan for
+                your space. This includes mood boards, 2D floor plans, and a curated selection of
+                furniture and accessories from our collection, all tailored to you.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <img src="/om_hr_portal/static/img/design_step_3_deliver.png"
+                class="img-fluid rounded shadow" alt="Finished Room" />
+            </div>
+            <div class="col-lg-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="display-4 fw-bold text-primary me-3">3</div>
+                <h3 class="fw-bold mb-0">Deliver</h3>
+              </div>
+              <p class="text-muted">Once you approve the design, we handle the rest. We'll manage
+                the ordering process and coordinate delivery. With our optional White Glove service,
+                we'll even assemble and place everything for you.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. "What's Included" Section -->
+        <section class="bg-light py-5">
+          <div class="container text-center">
+            <h2 class="display-6 fw-bold mb-5">What's Included</h2>
+            <div class="row g-4">
+              <div class="col-md-3">
+                <i class="fa fa-picture-o fa-3x mb-3 text-primary" />
+                <h4 class="fw-bold">Mood Board</h4>
+              </div>
+              <div class="col-md-3">
+                <i class="fa fa-map-o fa-3x mb-3 text-primary" />
+                <h4 class="fw-bold">Floor Plan</h4>
+              </div>
+              <div class="col-md-3">
+                <i class="fa fa-list-alt fa-3x mb-3 text-primary" />
+                <h4 class="fw-bold">Product Curation</h4>
+              </div>
+              <div class="col-md-3">
+                <i class="fa fa-user fa-3x mb-3 text-primary" />
+                <h4 class="fw-bold">1-on-1 Designer</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Final CTA - Contact Form -->
+        <section class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+              <h2 class="display-6 fw-bold mb-3">Ready to Start Your Project?</h2>
+              <p class="lead text-muted mb-4">Fill out the form below and a designer will be in
+                touch shortly.</p>
+              <form action="/design-services/submit" method="POST">
+                <input
+                  type="hidden"
+                  name="csrf_token"
+                  t-att-value="request.csrf_token()"
+                />
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    placeholder="Full Name"
+                    required="1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Email Address"
+                    required="1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    name="phone"
+                    placeholder="Phone Number"
+                  />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    name="project_details"
+                    rows="4"
+                    placeholder="Tell us a little about your project (e.g., room type, style, budget)..."
+                    required="1"></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg w-100"
+                >
+                  Submit Your Project
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </t>
+  </template>
+
+  <!-- DESIGN SERVICES THANK YOU PAGE -->
+  <template id="design_services_thank_you_template" name="Design Services Thank You">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="container text-center py-5">
+          <h1 class="display-4">Thank You!</h1>
+          <p class="lead col-lg-8 mx-auto">We've received your project details. One of our designers
+            will review your submission and contact you within 2 business days to get started. We're
+            excited to work with you!</p>
+          <a href="/" class="btn btn-primary mt-3">Back to Homepage</a>
+        </div>
+      </div>
+    </t>
+  </template>
+
+  <!-- DESIGN PROCESS PAGE TEMPLATE -->
+  <template id="design_process_template" name="Our Design Process">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+
+        <!-- 1. Hero Section -->
+        <section
+          class="text-center py-5"
+          style="background-image: url('/om_hr_portal/static/img/process_hero.png'); background-size: cover; background-position: center;"
+        >
+          <div class="container py-5">
+            <h1
+              class="display-4 fw-bold text-white"
+              style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"
+            >
+              A Process Built on Passion and Precision
+            </h1>
+          </div>
+        </section>
+
+        <section class="container py-5">
+          <!-- Intro Paragraph -->
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <p class="lead text-muted mb-5">
+                At Atelier Forma, every piece of furniture begins as a conversation between form and
+                function. Our process is a deliberate journey, blending timeless artistry with
+                modern engineering to create pieces that are not only beautiful but are built to
+                become a part of your story.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Step 1: Inspiration -->
+          <div class="row align-items-center g-5 mb-5">
+            <div class="col-lg-6">
+              <h2 class="display-5 fw-bold mb-3">1. The Spark of Inspiration</h2>
+              <p class="text-muted">Every design starts with an idea—a sketch on paper, an
+                architectural detail, or the elegant curve of a natural form. Our designers draw
+                inspiration from the world around them, translating abstract concepts into tangible
+                sketches and initial 3D models. This is where function meets poetry.</p>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="/om_hr_portal/static/img/process_step_1_sketch.png"
+                class="img-fluid rounded shadow-lg"
+                alt="Sketches and inspiration"
+              />
+            </div>
+          </div>
+
+          <!-- 3. Step 2: Materials -->
+          <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+            <div class="col-lg-6">
+              <h2 class="display-5 fw-bold mb-3">2. Mastering the Materials</h2>
+              <p class="text-muted">We believe that great design is nothing without great materials.
+                We meticulously source our solid woods, genuine leathers, and premium fabrics,
+                ensuring each component meets our exacting standards for quality, sustainability,
+                and durability. The material is not just a part of the design; it *is* the design.</p>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="/om_hr_portal/static/img/process_step_2_materials.png"
+                class="img-fluid rounded shadow-lg"
+                alt="Material samples"
+              />
+            </div>
+          </div>
+
+          <!-- 4. Step 3: Craftsmanship -->
+          <div class="row align-items-center g-5 mb-5">
+            <div class="col-lg-6">
+              <h2 class="display-5 fw-bold mb-3">3. The Artisan's Hand</h2>
+              <p class="text-muted">This is where sketches become reality. Our skilled artisans,
+                with decades of combined experience, employ both time-honored techniques and
+                precision technology to craft each piece. From joinery to upholstery, every step is
+                executed with an unwavering attention to detail.</p>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="/om_hr_portal/static/img/process_step_3_craft.png"
+                class="img-fluid rounded shadow-lg"
+                alt="Artisan working on wood"
+              />
+            </div>
+          </div>
+
+          <!-- 5. Step 4: Refinement -->
+          <div class="row align-items-center g-5 flex-lg-row-reverse">
+            <div class="col-lg-6">
+              <h2 class="display-5 fw-bold mb-3">4. Perfecting the Final Form</h2>
+              <p class="text-muted">Before a design is approved for our collection, prototypes
+                undergo rigorous testing for comfort, stability, and longevity. We live with our
+                prototypes, refining every angle, curve, and finish until it is not just perfect in
+                appearance, but perfect in experience.</p>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="/om_hr_portal/static/img/process_step_4_final.png"
+                class="img-fluid rounded shadow-lg"
+                alt="The finished product in a studio setting"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Final CTA -->
+        <section class="bg-light py-5">
+          <div class="container text-center">
+            <h2 class="fw-bold">Experience the Result</h2>
+            <p class="lead text-muted col-lg-6 mx-auto">Explore the collections born from our
+              passion for design and craftsmanship.</p>
+            <a
+              href="/products"
+              class="btn btn-primary btn-lg mt-3"
+            >
+              Discover Our Products
+            </a>
+          </div>
+        </section>
+
       </div>
     </t>
   </template>

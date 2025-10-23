@@ -56,6 +56,56 @@ class JobPortal(http.Controller):
         """Controller for the Returns & Exchanges information page."""
         return request.render("om_hr_portal.returns_and_exchanges_template", {})
 
+    # FAQ Page
+    @http.route("/faq", type="http", auth="public", website=True, sitemap=True)
+    def faq_page(self, **kwargs):
+        """Controller for the Frequently Asked Questions page."""
+        return request.render("om_hr_portal.faq_page_template", {})
+
+    # Design Services Page
+    @http.route(
+        "/design-services", type="http", auth="public", website=True, sitemap=True
+    )
+    def design_services_page(self, **kwargs):
+        """Controller for the Design Services page."""
+        return request.render("om_hr_portal.design_services_template", {})
+
+    @http.route(
+        "/design-services/submit",
+        type="http",
+        auth="public",
+        website=True,
+        methods=["POST"],
+        csrf=False,
+    )
+    def design_services_submit(self, **post):
+        """Controller to handle the design services contact form."""
+        if (
+            request.env["ir.module.module"]
+            .sudo()
+            .search([("name", "=", "crm"), ("state", "=", "installed")])
+        ):
+            request.env["crm.lead"].sudo().create(
+                {
+                    "name": f"Design Service Inquiry: {post.get('name')}",
+                    "contact_name": post.get("name"),
+                    "email_from": post.get("email"),
+                    "phone": post.get("phone"),
+                    "description": f"Project Details:\n{post.get('project_details')}",
+                }
+            )
+
+        # Redirect to a thank you page
+        return request.render("om_hr_portal.design_services_thank_you_template", {})
+
+    # Design Process Page
+    @http.route(
+        "/design-process", type="http", auth="public", website=True, sitemap=True
+    )
+    def design_process_page(self, **kwargs):
+        """Controller for the Design Process page."""
+        return request.render("om_hr_portal.design_process_template", {})
+
     # Products Page
     @http.route("/products", type="http", auth="public", website=True)
     def products_page(self, **kwargs):
