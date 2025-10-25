@@ -34,13 +34,31 @@ The module seamlessly integrates a beautifully designed public-facing website wi
 *(A few key screenshots to showcase the project's quality)*
 
 **Landing Page:**
-![Landing Page](https://github.com/dhlananhh/hr_portal/blob/main/static/screenshots/HomePage_1.png)
+
+<div align="left">
+  <img 
+    src="static/screenshots/HomePage_1.png"
+    width="800"
+  />
+</div>
 
 **Jobs Page:**
-![Jobs Page](https://github.com/dhlananhh/hr_portal/blob/main/static/screenshots/JobsPage.png) 
+
+<div align="left">
+  <img 
+    src="static/screenshots/JobsPage.png"
+    width="800"
+  />
+</div>
 
 **Products Page:**
-![Products Page](https://github.com/dhlananhh/hr_portal/blob/main/static/screenshots/ProductsPage.png) 
+
+<div align="left">
+  <img 
+    src="static/screenshots/ProductsPage.png"
+    width="800"
+  />
+</div>
 
 
 ## Technical Stack
