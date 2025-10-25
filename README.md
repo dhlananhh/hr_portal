@@ -1,5 +1,12 @@
 # HR & Recruitment Portal for Odoo 18 (om_hr_portal)
 
+<div align="center">
+  <img 
+    src="static/description/icon.png"
+    width="200"
+  />
+</div>
+
 ## Overview
 
 Welcome to the HR & Recruitment Portal module, a comprehensive enhancement for Odoo 18 Community Edition. This project was developed as part of a software engineering internship program, designed to transform a standard Odoo instance into a complete corporate website and HR management platform for **"Atelier Forma"**, a fictional high-end furniture design company.
@@ -154,7 +161,7 @@ If you do not have an Odoo 18 development environment, follow these steps first.
 
 3.  **Create a New Odoo Database:**
     - Open your web browser and navigate to `http://localhost:8069`.
-    - You will see the Odoo database creation page. Fill in the required details: set a master password, choose a database name (e.g., `atelier_forma_db`), provide your email/password, and ensure **"Load demonstration data" is checked** to have sample data for modules like HR and eCommerce.
+    - You will see the Odoo database creation page. Fill in the required details: set a master password, choose a database name (e.g., `hr_portal_db`), provide your email/password, and ensure **"Load demonstration data" is checked** to have sample data for modules like HR and eCommerce.
 
 4.  **Install the Module:**
     - After logging into your new database, go to the **Apps** menu.
