@@ -179,5 +179,3 @@ If you do not have an Odoo 18 development environment, follow these steps first.
 - **Name:** Duong Hoang Lan Anh
 - **Contact:** dhlananh2309@gmail.com
 - **GitHub:** https://github.com/dhlananhh/
-
-This project was developed under the mentorship of a Senior Software Engineer as part of an internship program at Vietnam Digital Transformation & Technology Company Limited.
