@@ -49,6 +49,20 @@ The module seamlessly integrates a beautifully designed public-facing website wi
   />
 </div>
 
+<div align="left">
+  <img 
+    src="static/screenshots/HomePage_2.png"
+    width="800"
+  />
+</div>
+
+<div align="left">
+  <img 
+    src="static/screenshots/HomePage_3.png"
+    width="800"
+  />
+</div>
+
 **Jobs Page:**
 
 <div align="left">
@@ -66,6 +80,43 @@ The module seamlessly integrates a beautifully designed public-facing website wi
     width="800"
   />
 </div>
+
+**Product Detail Page:**
+
+<div align="left">
+  <img 
+    src="static/screenshots/ProductDetailPage.png"
+    width="800"
+  />
+</div>
+
+**Shop Page:**
+
+<div align="left">
+  <img 
+    src="static/screenshots/ShopPage.png"
+    width="800"
+  />
+</div>
+
+**Contact Page:**
+
+<div align="left">
+  <img 
+    src="static/screenshots/ContactPage.png"
+    width="800"
+  />
+</div>
+
+**Navigation Menu:**
+
+<div align="left">
+  <img 
+    src="static/screenshots/NavigationMenu.png"
+    width="300"
+  />
+</div>
+
 
 
 ## Technical Stack
